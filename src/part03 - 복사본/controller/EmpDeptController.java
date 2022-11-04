@@ -5,7 +5,6 @@ import java.util.List;
 import part03.dao.JoinDAO;
 import part03.dto.DeptDTO;
 import part03.dto.EmpDTO;
-import part03.dto.LocDTO;
 
 public class EmpDeptController {
 	private JoinDAO dao;
@@ -24,10 +23,5 @@ public class EmpDeptController {
 	
 	public List<EmpDTO> partProcess() {
 		return dao.partMethod();
-		
-	//*
-	public List<LocDTO> emp_dept_locProcess() {
-		return dao.emp_dept_locProcess();
-	}
 	}
 } // end class

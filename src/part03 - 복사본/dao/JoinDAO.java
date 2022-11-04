@@ -11,7 +11,6 @@ import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 import part03.dto.DeptDTO;
 import part03.dto.EmpDTO;
-import part03.dto.LocDTO;
 
 public class JoinDAO {
 
@@ -54,12 +53,8 @@ public class JoinDAO {
 	public List<EmpDTO> partMethod() {
 		return session.selectList("join.dnator");
 	}
-	//*
-	public List<EmpDTO> emp_dept_locMethod() {
-		return session.selectList("join.emp_dept_loc");
-	}
 	
-	public List<LocDTO> emp_dept_locProcess() {
-		return session.selectList("join.emp_dept_locProcess");
-	}
+	//public List<LocDTO> locMethod() {
+	//	return session.selectList(join.lo)
+	//}
 } // end class

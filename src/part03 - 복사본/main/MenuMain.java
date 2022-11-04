@@ -33,22 +33,12 @@ public class MenuMain {
 	
 		} // end for			*/	
 		
-		/*
 		List<EmpDTO> aList = eDeptController.partProcess();
 		for(EmpDTO dto : aList) {
 			System.out.printf("%d %s %s %d\n",
 					dto.getEmployee_id(), dto.getFirst_name(),
 					dto.getJob_id(), dto.getDepartment_id());
-		} // end for */
-		
-		//*
-		List<EmpDTO> aList = eDeptController.emp_dept_locProcess();
-		for(EmpDTO edto : aList) {
-			System.out.printf("%d %s %s %s\n",
-					edto.getEmployee_id(), edto.getFirst_name(),
-					edto.getDept().getDepartment_name(),
-					edto.getLdto().getCity());
-		} 
+		} // end for
 		
 	} // end main
 

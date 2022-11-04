@@ -10,14 +10,10 @@
  		<result column="first_name" property="first_name" />
  		<result column="job_id" property="job_id" />
  		<association property="dept" javaType="part03.dto.DeptDTO">
+			<result column="department_id" property="department_id" />
 			<result column="department_name" property="department_name" />		
 		</association>
- 	
- 		<!--   -->
- 		<association property="Ldto" javaType="part03.dto.LocDTO">
-			<result column="city" property="city" />		
-		</association>
- 		</resultMap>
+ 	</resultMap>
  		
  	<select id="emp_dept" resultMap="emp_dept_result">
  		SELECT e.employee_id, e.first_name, e.job_id, e.department_id, d.department_name
