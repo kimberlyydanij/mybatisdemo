@@ -53,4 +53,8 @@ public class JoinDAO {
 	public List<EmpDTO> partMethod() {
 		return session.selectList("join.dnator");
 	}
+	
+	//public List<LocDTO> locMethod() {
+	//	return session.selectList(join.lo)
+	//}
 } // end class
