@@ -21,6 +21,7 @@ public class MemController {
 	
 	public int insertProcess(MemDTO dto) {
 		return dao.insertMethod(dto);
+		
 	} // end InsertProcess()
 	
 	public int updateProcess(HashMap<String, Object> hmap) {

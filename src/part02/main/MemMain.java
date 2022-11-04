@@ -58,6 +58,7 @@ public class MemMain {
 		hmap.put("name", sc.nextLine());
 		
 		int chk = mController.updateProcess(hmap);
+		
 		if(chk>=0)
 			System.out.printf("%d개 수정\n", chk);
 		else

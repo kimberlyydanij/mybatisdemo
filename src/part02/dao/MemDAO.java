@@ -50,19 +50,19 @@ public class MemDAO {
 				
 			public int insertMethod(MemDTO dto) {
 				int chk = -1;
-				
+				chk = session.insert("mem.memInsert",dto);
 				return chk;
 			} // end insertMethod()
 				
 			public int updateMethod(HashMap<String, Object> hmap) {
 				int chk = -1;
-					
+				chk = session.update("mem.memUpdate", hmap);
 				return chk;
 			} // end updateMethod
 				
 			public int deleteMethod(int age) {
 				int chk = -1;
-					
+				chk = session.delete("mem.memDelete", age);	
 				return chk;
 			} // end memDAO
 } // end class

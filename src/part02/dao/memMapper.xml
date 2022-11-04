@@ -8,4 +8,17 @@
  		SELECT * FROM mem
  		ORDER BY num
  	</select>
+ 	
+ 	<insert id="memInsert" parameterType="part02.dto.MemDTO">
+ 		INSERT INTO mem(num,name,age,loc)
+ 		VALUES (mem_num_seq.nextval,#{name},#{age},#{loc})
+ 	</insert>
+ 	
+ 	<update id="memUpdate" parameterType="java.util.HashMap">
+ 		UPDATE mem SET name=#{name} WHERE num=#{num}
+ 	</update>
+ 	
+ 	<delete id="memDelete" parameterType="int">
+ 		DELETE FROM mem WHERE age>=#{age}
+ 	</delete>
  </mapper>
