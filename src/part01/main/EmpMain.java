@@ -17,7 +17,7 @@ public class EmpMain {
 						                           dto.getSalary(), dto.getHire_date());
 		
 		System.out.println("=====SEARCH==================================");
-		List<EmpDTO> searchList = eController.searchProcess("eve..");
+		List<EmpDTO> searchList = eController.searchProcess("eve");
 		for(EmpDTO dto : searchList)
 			System.out.printf("%d %s %d %s\n", dto.getEmployee_id(), dto.getFirst_name(),
 											   dto.getSalary(), dto.getHire_date());
