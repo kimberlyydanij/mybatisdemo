@@ -16,7 +16,7 @@ public class MemMain {
 		
 		while(true) {
 			System.out.printf("1: 리스트, 2: 삽입, 3: 수정, 4: 삭제, 0: 종료");
-			int input = Integer.parseInt(sc.nextLine());
+			
 			
 			if(input==1) {
 				listCall(mController);

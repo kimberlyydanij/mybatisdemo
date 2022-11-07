@@ -17,6 +17,10 @@ public class MemController {
 	
 	public int insertProcess(MemDTO dto) {
 		return dao.insertMethod(dto);
-		
 	} // end InsertProcess()
+	
+	public int deleteProcess(int num) {
+		return dao.deleteMethod(num);
+	} // end deleteProcess
+	
 } // end Class

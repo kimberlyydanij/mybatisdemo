@@ -4,6 +4,10 @@ import java.io.IOException;
 import java.io.Reader;
 import java.util.List;
 
+import org.apache.ibatis.io.Resources;
+import org.apache.ibatis.session.SqlSession;
+import org.apache.ibatis.session.SqlSessionFactory;
+import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 import project_sql.MemDTO;
 
@@ -12,7 +16,7 @@ public class MemDAO {
 
 		public MemDAO() {
 			//1. 트랜잭션이 설정되어 있는 파일의 경로를 정의한다.
-					String resource = "config/configuration.xml";
+					String resource = "src/config/configuration.xml";
 					
 					//2. 설정 파일을 로딩하기 위해 입출력스트림과 연결한다.
 					try(Reader reader = Resources.getResourceAsReader(resource)) {
@@ -48,6 +52,12 @@ public class MemDAO {
 			chk = session.insert("mem.memInsert",dto);
 			return chk;
 		} // end insertMethod()
+		
+		public int deleteMethod(int num) {
+			int chk = -1;
+			chk = session.delete("mem.memDelete", num);	
+			return chk;
+		} // end memDAO
 		
 		
 } // end Class

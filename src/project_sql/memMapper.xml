@@ -4,14 +4,14 @@
  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
  <mapper namespace="mem">
  
- 	<select id="list" resultType="project_sql.memDTO">
+ 	<select id="list" resultType="project_sql.MemDTO">
  		SELECT * FROM mem
- 		ORDER BY num
+ 		<!--  ORDER BY num -->
  	</select>
- 	
- 	<insert id="memInsert" parameterType="project_sql.memDTO">
- 		INSERT INTO mem(num,name,age,loc)
- 		VALUES (mem_num_seq.nextval,#{name},#{age},#{loc})
+ 	<!-- 
+ 	<insert id="memInsert" parameterType="project_sql.MemDTO">
+ 		INSERT INTO mem(mname,mphone,maddress,msum)
+ 		VALUES (mem_num_seq.nextval,#{mname},#{mphone},#{maddress},#{msum})
  	</insert>
  	
  	<update id="memUpdate" parameterType="java.util.HashMap">
@@ -19,6 +19,6 @@
  	</update>
  	
  	<delete id="memDelete" parameterType="int">
- 		DELETE FROM mem WHERE age>=#{age}
- 	</delete>
- </mapper>+
+ 		DELETE FROM mem WHERE mnumber=#{mnumber}
+ 	</delete>  -->
+ </mapper>

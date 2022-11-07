@@ -47,6 +47,9 @@ public class MemDTO {
 	public void setLoc(String loc) {
 		this.loc = loc;
 	}
+
+
+	}
 	
 	
 }
