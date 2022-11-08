@@ -13,11 +13,10 @@ public class MemDTO {
 		
 	}
 
-	public MemDTO(String mName, String mPhone, String mAddress, int mSum) {
+	public MemDTO(String mName, String mPhone, String mAddress) {
 		this.mName = mName;
 		this.mPhone = mPhone;
 		this.mAddress = mAddress;
-		this.mSum = mSum;
 	}
 
 	public MemDTO(String mName, String mPhone, String mAddress, int mSum, String mGrade) {

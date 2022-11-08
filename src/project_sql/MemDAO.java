@@ -59,5 +59,13 @@ public class MemDAO {
 			return chk;
 		} // end memDAO
 		
+		public int updateMethod(int n,int s) {
+			int chk = -1;
+			String a = "mSum=#{mSum+s} WHERE mNumber=n";
+			System.out.println(a);
+			chk = session.update("mem.memUpdate",a);	
+			return chk;
+		} // end memDAO
+		
 		
 } // end Class

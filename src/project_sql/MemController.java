@@ -23,4 +23,8 @@ public class MemController {
 		return dao.deleteMethod(num);
 	} // end deleteProcess
 	
+	public int updateProcess(int n, int s) {
+		return dao.updateMethod(n,s);
+	} // end deleteProcess
+	
 } // end Class

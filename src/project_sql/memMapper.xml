@@ -5,20 +5,26 @@
  <mapper namespace="mem">
  
  	<select id="list" resultType="project_sql.MemDTO">
- 		SELECT * FROM mem
- 		<!--  ORDER BY num -->
+ 		SELECT * FROM MEM
+ 		ORDER BY mNumber -->
  	</select>
  	
  	<insert id="memInsert" parameterType="project_sql.MemDTO">
- 		INSERT INTO mem(mnumber, mname,mphone,maddress,msum)
- 		VALUES (mem_num_seq.nextval,#{mName},#{mPhone},#{mAddress},#{mSum})
+ 		INSERT INTO MEM(mNumber,mName,mPhone,mAddress, mSum, mGrade)
+ 		VALUES (mem_num_seq.nextval,#{mName},#{mPhone},#{mAddress},0,'New')
  	</insert>
- 	<!-- 
- 	<update id="memUpdate" parameterType="java.util.HashMap">
- 		UPDATE mem SET name=#{name} WHERE num=#{num}
- 	</update>
  	
  	<delete id="memDelete" parameterType="int">
- 		DELETE FROM mem WHERE mnumber=#{mnumber}
- 	</delete>  -->
+ 		DELETE FROM MEM WHERE mNumber=#{mNumber}
+ 	</delete> 
+ 
+ 	<!--  <update id="memUpdate" parameterType="java.util.HashMap"> 
+ 	<update id="memUpdate" parameterType="int,int">
+ 		UPDATE MEM SET mSum=#{mSum+s} WHERE mNumber=#{n}
+ 	</update> -->
+ 	
+ 	<update id="memUpdate" parameterType="String">
+ 		UPDATE MEM SET #{a}
+  	</update>
+ 	
  </mapper>
