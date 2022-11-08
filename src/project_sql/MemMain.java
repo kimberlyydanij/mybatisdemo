@@ -94,6 +94,6 @@ private static void updateCall(MemController mController, Scanner sc, Scanner sd
 	//int chk = mController.updateProcess(n,salesPrice);
 	
 } // end Delete
-//update
+
 
 } // end class
