@@ -8,12 +8,12 @@
  		SELECT * FROM mem
  		<!--  ORDER BY num -->
  	</select>
- 	<!-- 
+ 	
  	<insert id="memInsert" parameterType="project_sql.MemDTO">
- 		INSERT INTO mem(mname,mphone,maddress,msum)
+ 		INSERT INTO mem(mnumber, mname,mphone,maddress,msum)
  		VALUES (mem_num_seq.nextval,#{mname},#{mphone},#{maddress},#{msum})
  	</insert>
- 	
+ 	<!-- 
  	<update id="memUpdate" parameterType="java.util.HashMap">
  		UPDATE mem SET name=#{name} WHERE num=#{num}
  	</update>
