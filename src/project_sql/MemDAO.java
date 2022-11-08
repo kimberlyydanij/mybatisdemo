@@ -16,7 +16,7 @@ public class MemDAO {
 
 		public MemDAO() {
 			//1. 트랜잭션이 설정되어 있는 파일의 경로를 정의한다.
-					String resource = "src/config/configuration.xml";
+					String resource = "config/configuration.xml";
 					
 					//2. 설정 파일을 로딩하기 위해 입출력스트림과 연결한다.
 					try(Reader reader = Resources.getResourceAsReader(resource)) {

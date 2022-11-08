@@ -11,7 +11,7 @@
  	
  	<insert id="memInsert" parameterType="project_sql.MemDTO">
  		INSERT INTO mem(mnumber, mname,mphone,maddress,msum)
- 		VALUES (mem_num_seq.nextval,#{mname},#{mphone},#{maddress},#{msum})
+ 		VALUES (mem_num_seq.nextval,#{mName},#{mPhone},#{mAddress},#{mSum})
  	</insert>
  	<!-- 
  	<update id="memUpdate" parameterType="java.util.HashMap">

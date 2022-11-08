@@ -16,7 +16,7 @@ public class MemMain {
 		System.out.println("  ========================================");
 	
 		while(true) {
-			int chker = 0;
+
 			System.out.println("   1.회원추가 2.회원삭제 3.조회 4.매출입력 5.종료");
 			System.out.println("  ========================================");
 			System.out.print("   원하시는 업무를 입력하세요 : ");
@@ -58,8 +58,9 @@ public class MemMain {
 		int sum = Integer.parseInt(sc.nextLine());	
 		MemDTO dto = new MemDTO(name,phone,address,sum);
 		int chk = mController.insertProcess(dto);
-		if(chk>0)
-		System.out.println("   추가 완료하였습니다. 추가된 회원 정보 :");
+		if(chk>0) {
+	    System.out.println("  ========================================");
+		System.out.println("   추가 완료하였습니다. "); }
 		else
 			System.out.println("   추가에 실패하였습니다.");
 	} // end Insert
@@ -75,13 +76,14 @@ private static void deleteCall(MemController mController, Scanner sc) {
 
 private static void listCall(MemController mController) {
 	List<MemDTO> aList = mController.listProcess();
-	
+	System.out.println("  ========================================");
 	for(MemDTO dto : aList) 
-		System.out.printf("%d %s %s %s %d %s" 
+		System.out.printf("  %d %s %s %s %8d %s \n" 
 				 ,dto.getmNumber(),dto.getmName()
 				 ,dto.getmPhone(),dto.getmAddress()
 				 ,dto.getmSum(),dto.getmGrade());
-		System.out.println();
+		System.out.println(); 
+
 } // and listCall
 
 
