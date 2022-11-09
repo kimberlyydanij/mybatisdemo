@@ -2,16 +2,23 @@ package project_sql;
 
 public class MemDTO {
 	
-	private int mNumber;
+	public int mNumber;
 	private String mName;
 	private String mPhone;
 	private String mAddress;
-	private int mSum;
-	private String mGrade;
 	
 	public MemDTO() {
-		
+	
 	}
+
+
+	public MemDTO(int mNumber, String mName, String mPhone, String mAddress) {
+		this.mNumber = mNumber;
+		this.mName = mName;
+		this.mPhone = mPhone;
+		this.mAddress = mAddress;
+	}
+
 
 	public MemDTO(String mName, String mPhone, String mAddress) {
 		this.mName = mName;
@@ -19,13 +26,6 @@ public class MemDTO {
 		this.mAddress = mAddress;
 	}
 
-	public MemDTO(String mName, String mPhone, String mAddress, int mSum, String mGrade) {
-		this.mName = mName;
-		this.mPhone = mPhone;
-		this.mAddress = mAddress;
-		this.mSum = mSum;
-		this.mGrade = mGrade;
-	}
 
 	public int getmNumber() {
 		return mNumber;
@@ -59,21 +59,5 @@ public class MemDTO {
 		this.mAddress = mAddress;
 	}
 
-	public int getmSum() {
-		return mSum;
-	}
 
-	public void setmSum(int mSum) {
-		this.mSum = mSum;
-	}
-
-	public String getmGrade() {
-		return mGrade;
-	}
-
-	public void setmGrade(String mGrade) {
-		this.mGrade = mGrade;
-	}
-	
-	
-}
+} // end class

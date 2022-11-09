@@ -11,7 +11,7 @@ public class MemController {
 		 dao = new MemDAO();
 	} // end MemController()
 	
-	public List<MemDTO> listProcess() {
+	public List<SalesDTO> listProcess() {
 		return dao.listMethod();
 	} // end ListProcess();
 	
@@ -23,8 +23,9 @@ public class MemController {
 		return dao.deleteMethod(num);
 	} // end deleteProcess
 	
-	public int updateProcess(int n, int s) {
-		return dao.updateMethod(n,s);
+	public int updateProcess(SalesDTO sdto) {
+		return dao.updateMethod(sdto);
+
 	} // end deleteProcess
 	
 } // end Class

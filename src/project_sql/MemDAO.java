@@ -2,6 +2,7 @@ package project_sql;
 
 import java.io.IOException;
 import java.io.Reader;
+import java.util.HashMap;
 import java.util.List;
 
 import org.apache.ibatis.io.Resources;
@@ -40,7 +41,7 @@ public class MemDAO {
 		} // end constructor();
 		
 		
-		public List<MemDTO> listMethod() {
+		public List<SalesDTO> listMethod() {
 			
 			return session.selectList("mem.list");
 			
@@ -59,11 +60,9 @@ public class MemDAO {
 			return chk;
 		} // end memDAO
 		
-		public int updateMethod(int n,int s) {
+		public int updateMethod(SalesDTO sdto) {
 			int chk = -1;
-			String a = "mSum=#{mSum+s} WHERE mNumber=n";
-			System.out.println(a);
-			chk = session.update("mem.memUpdate",a);	
+			chk = session.update("mem.memUpdate",sdto);
 			return chk;
 		} // end memDAO
 		

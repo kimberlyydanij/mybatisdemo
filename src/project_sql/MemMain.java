@@ -10,7 +10,7 @@ public class MemMain {
 	public static void main(String[] args) {
 		MemController mController = new MemController();
 		Scanner sc = new Scanner(System.in);
-		Scanner sd = new Scanner(System.in);
+
 		
 		System.out.println("  ========================================");
 		System.out.println("       회원관리 프로그램에 오신것을 환영합니다     ");
@@ -21,7 +21,7 @@ public class MemMain {
 			System.out.println("   1.회원추가 2.회원삭제 3.조회 4.매출입력 5.종료");
 			System.out.println("  ========================================");
 			System.out.print("   원하시는 업무를 입력하세요 : ");
-			int input = Integer.parseInt(sc.nextLine());
+			int input = sc.nextInt();
 			
 			if(input==1) {
 				insertCall(mController, sc);	
@@ -33,10 +33,11 @@ public class MemMain {
 					listCall(mController);
 					
 				} else if(input==4) {
-				    updateCall(mController, sc, sd);
+				    updateCall(mController, sc);
 					
 				} else if (input==5) {
 					System.out.println("시스템 종료");
+					sc.close();
 					System.exit(0); }
 		} // end while
 		
@@ -66,15 +67,14 @@ private static void deleteCall(MemController mController, Scanner sc) {
 		System.out.println("  ========================================");
 		System.out.print("   삭제할 회원의 회원번호를 입력하세요 : ");
 		mController.deleteProcess(Integer.parseInt(sc.nextLine()));
-		//int num = Integer.parseInt(sc.nextLine());
-		//int chk = mController.deleteProcess(num);
 		
 	} // end Delete
 
 private static void listCall(MemController mController) {
-	List<MemDTO> aList = mController.listProcess();
+	SalesDTO sdto = new SalesDTO();
+	List<SalesDTO> aList = mController.listProcess();
 	System.out.println("  ========================================");
-	for(MemDTO dto : aList) 
+	for(SalesDTO dto : aList) 
 		System.out.printf("  %2d %s %s %s %7d %s \n" 
 				 ,dto.getmNumber(),dto.getmName()
 				 ,dto.getmPhone(),dto.getmAddress()
@@ -83,16 +83,18 @@ private static void listCall(MemController mController) {
 
 } // and listCall
 
-private static void updateCall(MemController mController, Scanner sc, Scanner sd) {
-	
+private static void updateCall(MemController mController, Scanner sc) {
+
 	System.out.println("  ========================================");
 	System.out.print("   매출을 추가할 회원의 회원번호를 입력하세요 : ");
-	int nnum = Integer.parseInt(sc.nextLine());
+	int num = sc.nextInt();
 	System.out.print("   추가 매출액을 입력하세요 : ");
-	int salesPrice = Integer.parseInt(sd.nextLine());
-	mController.updateProcess(nnum,salesPrice);
-	//int chk = mController.updateProcess(n,salesPrice);
+	int sales = sc.nextInt();
 	
+	SalesDTO sdto = new SalesDTO(num,sales);
+	int chk = mController.updateProcess(sdto);
+
+
 } // end Delete
 
 

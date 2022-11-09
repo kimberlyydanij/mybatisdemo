@@ -14,9 +14,10 @@ public class MemMain {
 		MemController mController = new MemController();
 		Scanner sc = new Scanner(System.in);
 		
+		
 		while(true) {
 			System.out.printf("1: 리스트, 2: 삽입, 3: 수정, 4: 삭제, 0: 종료");
-			
+			int input = sc.nextInt();
 			
 			if(input==1) {
 				listCall(mController);

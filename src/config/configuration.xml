@@ -18,7 +18,7 @@
  <mappers>
  
  <mapper resource="part01/dao/empMapper.xml"/>
- <!--   <mapper resource="part02/dao/memMapper.xml"/>-->
+ <!-- <mapper resource="part02/dao/memmMapper.xml"/> -->
  <mapper resource="part03/dao/joinMapper.xml"/>
  <mapper resource="project_sql/memMapper.xml"/>
  </mappers>
