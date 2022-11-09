@@ -14,7 +14,7 @@ public class MemController {
 	public List<SalesDTO> listProcess() {
 		return dao.listMethod();
 	} // end ListProcess();
-	
+
 	public int insertProcess(MemDTO dto) {
 		return dao.insertMethod(dto);
 	} // end InsertProcess()
