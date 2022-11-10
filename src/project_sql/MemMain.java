@@ -17,16 +17,17 @@ public class MemMain {
 		System.out.println("  ========================================");
 	
 		while(true) {
-
+			System.out.println();
 			System.out.println("   1.회원추가 2.회원삭제 3.조회 4.매출입력 5.종료");
 			System.out.println("  ========================================");
 			System.out.print("   원하시는 업무를 입력하세요 : ");
 			int input = Integer.parseInt(sc.nextLine());
 			
-			if(input==1) {
+			if(input == 1)
+			{
 				insertCall(mController, sc);	
 				
-				} else if(input==2) {
+				} else if(input == 2) {
 					deleteCall(mController, sc);
 					
 				} else if(input==3) {
@@ -59,11 +60,10 @@ public class MemMain {
 		if(chk>0) {
 	    System.out.println("  ========================================");
 		System.out.println("   추가 완료하였습니다. ");
-		System.out.println(); }
-		
+		}
 		else {
 			System.out.println("   추가에 실패하였습니다.");
-			System.out.println(); }
+		}
 	} // end Insert
 	
 private static void deleteCall(MemController mController, Scanner sc) {
@@ -74,10 +74,10 @@ private static void deleteCall(MemController mController, Scanner sc) {
 		if(chk>0) {
 		    System.out.println("  ========================================");
 			System.out.println("   삭제 완료하였습니다. ");
-			System.out.println();}
+		}
 			else {
 				System.out.println("   삭제에 실패하였습니다.");
-				System.out.println(); }
+		}
 		
 	} // end Delete
 
@@ -90,38 +90,51 @@ private static void listCall(MemController mController) {
 				 ,dto.getmNumber(),dto.getmName()
 				 ,dto.getmPhone(),dto.getmAddress()
 				 ,dto.getmSum(),dto.getmGrade());
-		System.out.println(); 
-
+	
 } // and listCall
 
 private static void updateCall(MemController mController, Scanner sc) {
-
+	
 	System.out.println("  ========================================");
 	System.out.print("   매출을 추가할 회원의 회원번호를 입력하세요 : ");
 	int num = Integer.parseInt(sc.nextLine());
-	
+	int uchk = 0;
 	List<SalesDTO> aList = mController.listProcess();
 	System.out.println();
 	for(SalesDTO dto : aList) {
-		if (dto.getmNumber()==num)
+		if (dto.getmNumber()==num) {
 		System.out.printf("  %2d %s %s %s %7d %s \n" 
 				 ,dto.getmNumber(),dto.getmName()
 				 ,dto.getmPhone(),dto.getmAddress()
-				 ,dto.getmSum(),dto.getmGrade());  } 
+				 ,dto.getmSum(),dto.getmGrade()); 
+		uchk = 1;}
+	} // end for
+	
+	if(uchk==0) {
+			System.out.println("   존재하지 않는 회원 번호 입니다.");
+			return;
+	  		 } 
 	System.out.println();
 	System.out.print("   추가할 회원의 정보가 맞습니까? (Y/N) : " );
-	String chker = sc.nextLine(); 
-	if (!(chker=="Y" || chker=="y")) {
-		System.out.println("   다시 입력하세요. : "); }
-	else {
-	System.out.print("   추가 매출액을 입력하세요 : ");
-	int sales = Integer.parseInt(sc.nextLine());
-	
-	SalesDTO sdto = new SalesDTO(num,sales);
-	int chk = mController.updateProcess(sdto);
-	
+	char chker = sc.nextLine().charAt(0); 
+	if (!(chker=='Y' || chker=='y')) {
+		System.out.println("   다시 입력하세요. : ");  }
+	else if (chker=='Y' || chker=='y') {
+
+		System.out.print("   추가 매출액을 입력하세요 : ");
+		int sales = Integer.parseInt(sc.nextLine());
+		SalesDTO sdto = new SalesDTO(num,sales);
+		int chk = mController.updateProcess(sdto);		
+		if(chk>0) {
+		    System.out.println("  ========================================");
+			System.out.println("   추가 완료하였습니다. ");
+			}
+			
+			else {
+				System.out.println("   추가에 실패하였습니다.");
+            }
+		
 	} // end if
-	
 
 } // end Update
 

@@ -18,12 +18,10 @@
  		DELETE FROM MEM WHERE mNumber=#{mNumber}
  	</delete> 
  
- 	<update id="memUpdate" parameterType="project_sql.MemDTO">
- 
+ 	<update id="memUpdate" parameterType="project_sql.SalesDTO">
   		UPDATE MEM 
   		SET mSum = mSum + #{mSum}
-  		WHERE mNumber = #{mNumber} 	
-
+  		WHERE mNumber = #{mNumber}
  	</update>
  	
  </mapper>

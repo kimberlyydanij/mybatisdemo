@@ -79,13 +79,13 @@ public class Process extends Member {
 	public static String calGrade(int data) {
 		String cGrade = "New";
 		
-		if (data<100000) 
+		if (data < 100000) 
 			cGrade="New";
-			else if (data>=100000 && data <500000) 
+			else if (data >= 100000 && data < 500000) 
 				cGrade="Family";
-			else if (data>=500000 && data <1000000)
+			else if (data >= 500000 && data < 1000000)
 				cGrade="Vip";
-			else if (data>=1000000)
+			else if (data >= 1000000)
 				cGrade="Vvip";			
 
 		return cGrade;

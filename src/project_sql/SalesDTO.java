@@ -14,7 +14,7 @@ public class SalesDTO extends MemDTO{
 		this.mGrade = mGrade;
 	}
 	public SalesDTO(int mNumber, int mSum) {
-		this.mNumber = this.getmNumber();
+		this.mNumber = mNumber;
 	    this.mSum = mSum;
 	}
 	
