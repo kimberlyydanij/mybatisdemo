@@ -22,7 +22,7 @@
  
   		UPDATE MEM 
   		SET mSum = mSum + #{mSum}
-  		<!--  WHERE mNumber = #{mNumber} --> 	
+  		WHERE mNumber = #{mNumber} 	
 
  	</update>
  	
