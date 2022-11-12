@@ -23,6 +23,7 @@ public class MemMain {
 			System.out.print("   원하시는 업무를 입력하세요 : ");
 			int input = Integer.parseInt(sc.nextLine());
 			
+			
 			if(input == 1)
 			{
 				insertCall(mController, sc);	
