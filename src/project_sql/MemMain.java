@@ -125,7 +125,8 @@ private static void updateCall(MemController mController, Scanner sc) {
 		System.out.print("   추가 매출액을 입력하세요 : ");
 		int sales = Integer.parseInt(sc.nextLine());
 		SalesDTO sdto = new SalesDTO(num,sales);
-		int chk = mController.updateProcess(sdto);		
+		int chk = mController.updateProcess(sdto);	
+
 		if(chk>0) {
 		    System.out.println("  ========================================");
 			System.out.println("   추가 완료하였습니다. ");

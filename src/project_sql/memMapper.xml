@@ -22,6 +22,16 @@
   		UPDATE MEM 
   		SET mSum = mSum + #{mSum}
   		WHERE mNumber = #{mNumber}
- 	</update>
+  	</update>	
+  		
+  		
+  		UPDATE MEM
+  		SET mGrade =
+  			case when mSum >= 100000 then 'Family'
+  			     when mSum >= 500000 then 'Vip'
+  			     when mSum >= 1000000 then 'Vvip'
+  		END
+  		WHERE mSum >= 0   
+	</update>
  	
  </mapper>
