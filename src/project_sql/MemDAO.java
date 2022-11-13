@@ -58,12 +58,18 @@ public class MemDAO {
 			int chk = -1;
 			chk = session.delete("mem.memDelete", num);	
 			return chk;
-		} // end memDAO
+		} // end deleteDAO
 		
 		public int updateMethod(SalesDTO sdto) {
 			int chk = -1;
 			chk = session.update("mem.memUpdate",sdto);
 			return chk;
-		} // end memDAO
+		} // end updateDAO
+		
+		public int gradeMethod(SalesDTO sdto) {
+			int chk = -1;
+			chk = session.update("mem.memGrade",sdto);
+			return chk;
+		} // end updateDAO
 		
 } // end Class

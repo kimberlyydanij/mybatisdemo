@@ -26,6 +26,12 @@ public class MemController {
 	public int updateProcess(SalesDTO sdto) {
 		return dao.updateMethod(sdto);
 
-	} // end deleteProcess
+	} // end updateProcess
+	
+	public int gradeProcess(SalesDTO sdto) {
+		return dao.gradeMethod(sdto);
+
+	} // end updateProcess
+	
 	
 } // end Class

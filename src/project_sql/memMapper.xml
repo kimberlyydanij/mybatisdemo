@@ -12,6 +12,7 @@
  	<insert id="memInsert" parameterType="project_sql.SalesDTO">
  		INSERT INTO MEM(mNumber,mName,mPhone,mAddress, mSum, mGrade)
  		VALUES (mem_num_seq.nextval,#{mName},#{mPhone},#{mAddress},0,'New')
+
  	</insert>
  	
  	<delete id="memDelete" parameterType="int">
@@ -24,14 +25,15 @@
   		WHERE mNumber = #{mNumber}
   	</update>	
   		
-  		
+  	<update id="memGrade" parameterType="project_sql.SalesDTO">	
   		UPDATE MEM
   		SET mGrade =
-  			case when mSum >= 100000 then 'Family'
-  			     when mSum >= 500000 then 'Vip'
-  			     when mSum >= 1000000 then 'Vvip'
+  			case  when mSum >= 1000000 then 'Vvip'
+  			      when mSum >= 500000 then 'Vip'		
+  			      when mSum >= 100000 then 'Family' 
+  			      else 'New'   
   		END
-  		WHERE mSum >= 0   
+  		WHERE mNumber = #{mNumber} 
 	</update>
  	
  </mapper>

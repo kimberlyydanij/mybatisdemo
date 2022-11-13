@@ -126,7 +126,7 @@ private static void updateCall(MemController mController, Scanner sc) {
 		int sales = Integer.parseInt(sc.nextLine());
 		SalesDTO sdto = new SalesDTO(num,sales);
 		int chk = mController.updateProcess(sdto);	
-
+		mController.gradeProcess(sdto);
 		if(chk>0) {
 		    System.out.println("  ========================================");
 			System.out.println("   추가 완료하였습니다. ");
