@@ -64,6 +64,10 @@ public class MemDAO {
 	public int multiUpdateMethod(MemDTO dto) {
 		return session.update("per.multiUpt", dto);
 	}
+	
+	public int insertDataMethod(MemDTO dto) {
+		return session.insert("per.insData", dto);
+	} 
 } // end class
 
 

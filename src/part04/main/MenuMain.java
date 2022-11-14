@@ -29,14 +29,18 @@ public class MenuMain {
 		dto.setAge(35);
 		dto.setName("이");
 		List<MemDTO> searchList = mController.searchProcess(dto);
-		display(searchList);  */
+		display(searchList); 
 		
 		MemDTO mt = new MemDTO();
 		mt.setNum(19);
 		mt.setName("윤민영");
 		mt.setAge(50);
 		int uptCnt = mController.multiUpdateProcess(mt);
-		System.out.printf("Update Count :%d\n",uptCnt);
+		System.out.printf("Update Count :%d\n",uptCnt);  */
+		
+		int insCnt = mController.insertDataMethod(new MemDTO("돌쟁이",10,"부산"));
+		System.out.printf("Insert Count : %d\n",insCnt);
+		
 		
 		List<MemDTO> aList = mController.selectProcess();
 		display(aList);

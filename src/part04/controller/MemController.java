@@ -36,5 +36,8 @@ public class MemController {
 		return dao.multiUpdateMethod(dto);
 	} // end multiUpdateProcess
 	
+	public int insertDataMethod(MemDTO dto) {
+		return dao.insertDataMethod(dto);
+	}
 
 } // end class
