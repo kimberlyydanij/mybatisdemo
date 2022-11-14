@@ -22,18 +22,25 @@ public class MenuMain {
 		deleteList.add(17);
 		deleteList.add(18);
 		int delCnt = mController.multiDeleteProcess(deleteList);
-		System.out.printf("Delete Count:%d\n",delCnt); */
+		System.out.printf("Delete Count:%d\n",delCnt); 
 		
 		System.out.println("검색결과 : ");
 		MemDTO dto = new MemDTO();
 		dto.setAge(35);
 		dto.setName("이");
 		List<MemDTO> searchList = mController.searchProcess(dto);
-		display(searchList);
+		display(searchList);  */
 		
-		/*List<MemDTO> aList = mController.selectProcess();
-		display(aList); */
-
+		MemDTO mt = new MemDTO();
+		mt.setNum(19);
+		mt.setName("윤민영");
+		mt.setAge(50);
+		int uptCnt = mController.multiUpdateProcess(mt);
+		System.out.printf("Update Count :%d\n",uptCnt);
+		
+		List<MemDTO> aList = mController.selectProcess();
+		display(aList);
+		
 	 } // end main()
 	
 	public static void display(List<MemDTO> aList) {

@@ -83,5 +83,34 @@
 		</trim>
 		
 	</select>
+	
+	
+	<!--  다중 update -->
+	<update id="multiUpt" parameterType="part04.dto.MemDTO">
+			UPDATE mem
+		<!--    <set>
+				<if test="name!=null">
+					name=#{name},
+				</if>
+				<if test="age!=0">
+				    age=#{age},				
+				</if>
+				<if test="loc!=null">
+					loc=#{loc}
+				</if>
+			</set>  -->
+			<trim prefix="set" suffixOverrides=",">
+				<if test="name!=null">
+					name=#{name},
+				</if>
+				<if test="age!=0">
+				    age=#{age},				
+				</if>
+				<if test="loc!=null">
+					loc=#{loc}
+				</if>	
+			</trim>
+			WHERE num=#{num}		
+	</update>
  
  </mapper>

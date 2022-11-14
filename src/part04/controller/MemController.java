@@ -32,6 +32,9 @@ public class MemController {
 		return dao.searchMethod(dto);
 	} // end searchProcess
 	
+	public int multiUpdateProcess(MemDTO dto) {
+		return dao.multiUpdateMethod(dto);
+	} // end multiUpdateProcess
 	
 
 } // end class
