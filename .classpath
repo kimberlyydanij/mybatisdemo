@@ -9,7 +9,7 @@
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
-	<classpathentry exported="true" kind="lib" path="E:/study/big_study/mybatis-3.5.7/mybatis-3.5.7.jar">
+	<classpathentry kind="lib" path="D:/bic_study/util/mybatis-3.5.7/mybatis-3.5.7.jar">
 		<attributes>
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>

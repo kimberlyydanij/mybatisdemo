@@ -21,5 +21,6 @@
  <!-- <mapper resource="part02/dao/memmMapper.xml"/> -->
  <mapper resource="part03/dao/joinMapper.xml"/>
  <mapper resource="project_sql/memMapper.xml"/>
+ <mapper resource="part04/dao/memMapper.xml"/>
  </mappers>
 </configuration>
