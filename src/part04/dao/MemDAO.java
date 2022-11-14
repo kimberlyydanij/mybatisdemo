@@ -44,6 +44,22 @@ public class MemDAO {
 	public List<MemDTO> allMethod() {
 		return session.selectList("per.all");
 	}
+	
+	public int keyMethod() {
+		return session.selectOne("per.keyNum");
+	}
+	
+	public int multiInsertMethod(List<MemDTO> list) { 
+		return session.insert("per.multiIns", list);
+	}
+	
+	public int multiDeleteMethod(List<Integer> list) {
+		return session.delete("per.multiDel", list);
+	}
+	
+	public List<MemDTO> searchMethod(MemDTO dto) {
+		return session.selectList("per.search",dto);
+	}
 } // end class
 
 

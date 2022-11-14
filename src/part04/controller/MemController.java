@@ -17,5 +17,21 @@ public class MemController {
 		return dao.allMethod();
 	}
 	
+	public int multiInsertProcess(List<MemDTO> list) {
+		for(MemDTO dto : list) {
+			dto.setNum(dao.keyMethod()); }
+		
+		return dao.multiInsertMethod(list); 
+	} // end MultiInsertProcess
+	
+	public int multiDeleteProcess(List<Integer> list) {
+		return dao.multiDeleteMethod(list); 
+	} // end MultiDeleteProcess
+	
+	public List<MemDTO> searchProcess(MemDTO dto) {
+		return dao.searchMethod(dto);
+	} // end searchProcess
+	
+	
 
 } // end class
