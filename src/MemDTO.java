@@ -1,4 +1,4 @@
-package project_sql;
+
 
 public class MemDTO {
 	private int mNumber;
